@@ -8,25 +8,7 @@ export default function Footer() {
             Right Reserved.
           </div>
           <div className="text-center md:text-right">
-            Designed By{' '}
-            <a
-              href="https://htmlcodex.com"
-              target="_blank"
-              rel="noreferrer"
-              className="border-b border-gray-400 text-gray-300"
-            >
-              HTML Codex
-            </a>
-            <br />
-            Distributed By:{' '}
-            <a
-              href="https://themewagon.com"
-              target="_blank"
-              rel="noreferrer"
-              className="border-b border-gray-400"
-            >
-              ThemeWagon
-            </a>
+            Designed By The B8R
           </div>
         </div>
       </div>
