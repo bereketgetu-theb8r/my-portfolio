@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes pulse-border {
+  0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+  100% { transform: translate(-50%, -50%) scale(2); opacity: 0; }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in-up {
+  opacity: 0;
+  animation: fade-in-up 0.8s ease forwards;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Open Sans", ui-sans-serif, system-ui, sans-serif;
+  color: #12141d;
+}
+
+/* Play button (pulsing ring around a triangle) */
+.btn-play {
+  position: relative;
+  display: block;
+  box-sizing: content-box;
+  width: 16px;
+  height: 26px;
+  border-radius: 100%;
+  border: none;
+  outline: none;
+  padding: 18px 20px 20px 28px;
+  background: #6244c5;
+  cursor: pointer;
+}
+
+.btn-play::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  left: 50%;
+  top: 50%;
+  width: 60px;
+  height: 60px;
+  background: #6244c5;
+  border-radius: 100%;
+  animation: pulse-border 1500ms ease-out infinite;
+}
+
+.btn-play::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  top: 50%;
+  width: 60px;
+  height: 60px;
+  background: #ffffff;
+  border-radius: 100%;
+  transition: all 200ms;
+}
+
+.btn-play span {
+  display: block;
+  position: relative;
+  z-index: 3;
+  width: 0;
+  height: 0;
+  left: -1px;
+  border-left: 16px solid #6244c5;
+  border-top: 11px solid transparent;
+  border-bottom: 11px solid transparent;
+}
+
+.typed-cursor {
+  font-size: 1.875rem;
+  color: #12141d;
+}
+
+/* Custom animations with delay support (replaces WOW.js) */
+.wow-delay-1 { animation-delay: 0.1s; }
+.wow-delay-3 { animation-delay: 0.3s; }
+.wow-delay-5 { animation-delay: 0.5s; }
